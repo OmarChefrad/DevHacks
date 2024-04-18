@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/path/to/htmx.min.js"></script>
+    <title>DEVHACKS</title>
+    <!-- Include HTMX library -->
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
 </head>
 <body>
-  <button hx-get="/api/data" hx-target="#result">Load Data</button>
-  <div id="result"></div>
+    <h1>HTMX data end point</h1>
+    <button hx-get="/api/data" hx-target="#result">Fetch Data</button>
+    <div id="result"></div>
+    <!-- Script to update the result div with data from the server -->
+    <script>
+      // Function to update the result div with data received from the server
+      function updateResult(data) {
+          // Find the result div
+          var resultDiv = document.getElementById("result");
+          // Update the content of the result div with the data received from the server
+          resultDiv.innerHTML = JSON.stringify(data);
+      }
+  </script>
 </body>
 </html>
